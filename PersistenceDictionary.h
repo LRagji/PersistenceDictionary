@@ -1,23 +1,31 @@
 /*
-  Morse.h - Library for flashing Morse code.
-  Created by David A. Mellis, November 2, 2007.
-  Released into the public domain.
+  PersistenceDictionary.h - Library for Persistence Dictionary on SD cards.
+  Created by Laukik Ragji, November 13, 2016.
+  Released with MIT.
 */
 
-#ifndef Morse_h
-#define Morse_h
+#ifndef PersistenceDictionary_h
+#define PersistenceDictionary_h
 
-#include "WProgram.h"
+#include "Arduino.h"
+#include "SPI.h"
+#include "SD.h"
 
-class Morse
+class PersistenceDictionary
 {
   public:
-    Morse(int pin);
-    void dot();
-    void dash();
+    PersistenceDictionary();
+    void Begin(String dictionaryFilePath);
+    String GetValue(String key);
+    void SetValue(String key, String value);
+    void DeleteValue(String key);
   private:
-    int _pin;
+    String _dictionaryFileLocation;
+    void MarkDeleted(File &file, int keyLength);
+    void SeekValueStartPosition(File &fileToSearch, String key);
+    bool Matches(String key, byte buff[]);
 };
 
 #endif
+
 

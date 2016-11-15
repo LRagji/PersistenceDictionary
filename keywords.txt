@@ -1,3 +1,3 @@
-Morse	KEYWORD1
-dash	KEYWORD2
-dot	KEYWORD2
+PersistenceDictionary	KEYWORD2
+Begin	KEYWORD2
+GetValue	KEYWORD2SetValue	KEYWORD2DeleteValue
