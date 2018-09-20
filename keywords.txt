@@ -1,3 +1,5 @@
 PersistenceDictionary	KEYWORD2
 Begin	KEYWORD2
-GetValue	KEYWORD2SetValue	KEYWORD2DeleteValue
+GetValue	KEYWORD2
+SetValue	KEYWORD2
+DeleteValue	KEYWORD2
